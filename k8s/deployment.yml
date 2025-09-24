@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: online-shop
+  name: kubecommerce
   namespace: online-shop-prod
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: online-shop
+      app: kubecommerce
   template:
     metadata:
       labels:
-        app: online-shop
+        app: kubecommerce
     spec:
       containers:
-      - name: online-shop
-        image: online_shop:latest
+      - name: kubecommerce
+        image: kubecommerce:latest
         imagePullPolicy: Never
         ports:
         - containerPort: 80
